@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "IT Company Locator";
+}
+@{
+    /**/
+
+    ViewBag.Title = "Home";
+}
+
+<head>
+
+
+    <style>
+
+
+
+        table, th, td {
+            border: 2px solid black;
+            font-family: bree serif;
+            position: center;
+        }
+    </style>
+</head>
+
+<body style="background-color:blanchedalmond">
+    
+    <center>
+        <div>
+            <h1>Please Enter The Location</h1>
+        </div>
+    </center><br />
+
+
+    @using (Html.BeginForm())
+    {<row style="align-content:center;">
+
+
+         <centre>
+             <form action="it_company_locator">
+                 Enter Location <input type="text" name="textbox" required />
+                 <button type="submit">Search</button>
+
+             </form>
+         </centre>
+
+
+        </row>
+        <br />
+        <br />
+        <br />
+
+        if (Model != null)
+        {
+            <table>
+                <tr>
+                    <th bgcolor="FFEBCD ">Name</th>
+                    <th bgcolor="FFEBCD">Address</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td align="center"><b>@item.name</b></td>
+
+                        <td align="center"><img src="~/Content/image/images.jpg" width="20" height="20" />@item.address</td>
+                    </tr>
+                }
+            </table>
+
+        }
+
+    }
+
+
+
+</body>
